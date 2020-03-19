@@ -1,4 +1,4 @@
-package com.example.auth.demo.domain.auth;
+package com.school.domain.auth;
 
 import lombok.Builder;
 import lombok.Data;

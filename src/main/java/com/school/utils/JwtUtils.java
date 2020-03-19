@@ -1,7 +1,7 @@
-package com.example.auth.demo.utils;
+package com.school.utils;
 
-import com.example.auth.demo.domain.auth.Role;
-import com.example.auth.demo.domain.auth.UserDetail;
+import com.school.domain.auth.Role;
+import com.school.domain.auth.UserDetail;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.CompressionCodecs;
 import io.jsonwebtoken.Jwts;

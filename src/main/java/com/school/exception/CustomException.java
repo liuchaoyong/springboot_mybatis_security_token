@@ -1,6 +1,6 @@
-package com.example.auth.demo.exception;
+package com.school.exception;
 
-import com.example.auth.demo.domain.ResultJson;
+import com.school.domain.ResultJson;
 import lombok.Getter;
 
 

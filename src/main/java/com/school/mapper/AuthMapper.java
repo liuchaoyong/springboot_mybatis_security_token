@@ -1,7 +1,7 @@
-package com.example.auth.demo.mapper;
+package com.school.mapper;
 
-import com.example.auth.demo.domain.auth.Role;
-import com.example.auth.demo.domain.auth.UserDetail;
+import com.school.domain.auth.Role;
+import com.school.domain.auth.UserDetail;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.auth.demo.config;
+package com.school.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

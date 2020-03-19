@@ -1,5 +1,7 @@
-package com.example.auth.demo.domain.auth;
+package com.school.domain.auth;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,11 +11,21 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+@ApiModel("用户详细信息")
 public class UserDetail implements UserDetails {
+    @ApiModelProperty(value = "用户ID")
     private long id;
+
+    @ApiModelProperty(value = "用户名")
     private String username;
+
+    @ApiModelProperty(value = "加密用户密码")
     private String password;
+
+    @ApiModelProperty(value = "用户角色")
     private Role role;
+
+    @ApiModelProperty(value = "最后一次重置密码")
     private Date lastPasswordResetDate;
 
     public UserDetail(long id, String username, Role role, String password) {

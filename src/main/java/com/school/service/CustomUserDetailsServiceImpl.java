@@ -1,8 +1,8 @@
-package com.example.auth.demo.service;
+package com.school.service;
 
-import com.example.auth.demo.domain.auth.Role;
-import com.example.auth.demo.domain.auth.UserDetail;
-import com.example.auth.demo.mapper.AuthMapper;
+import com.school.domain.auth.Role;
+import com.school.domain.auth.UserDetail;
+import com.school.mapper.AuthMapper;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;

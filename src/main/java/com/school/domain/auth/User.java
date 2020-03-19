@@ -1,4 +1,4 @@
-package com.example.auth.demo.domain.auth;
+package com.school.domain.auth;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;

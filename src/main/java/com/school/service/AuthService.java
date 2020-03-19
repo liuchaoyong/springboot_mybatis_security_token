@@ -1,7 +1,7 @@
-package com.example.auth.demo.service;
+package com.school.service;
 
-import com.example.auth.demo.domain.auth.ResponseUserToken;
-import com.example.auth.demo.domain.auth.UserDetail;
+import com.school.domain.auth.ResponseUserToken;
+import com.school.domain.auth.UserDetail;
 
 
 public interface AuthService {

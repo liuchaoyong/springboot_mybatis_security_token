@@ -1,13 +1,13 @@
-package com.example.auth.demo.service;
+package com.school.service;
 
-import com.example.auth.demo.domain.ResultCode;
-import com.example.auth.demo.domain.ResultJson;
-import com.example.auth.demo.domain.auth.ResponseUserToken;
-import com.example.auth.demo.domain.auth.Role;
-import com.example.auth.demo.domain.auth.UserDetail;
-import com.example.auth.demo.exception.CustomException;
-import com.example.auth.demo.mapper.AuthMapper;
-import com.example.auth.demo.utils.JwtUtils;
+import com.school.domain.ResultCode;
+import com.school.domain.ResultJson;
+import com.school.domain.auth.ResponseUserToken;
+import com.school.domain.auth.Role;
+import com.school.domain.auth.UserDetail;
+import com.school.exception.CustomException;
+import com.school.mapper.AuthMapper;
+import com.school.utils.JwtUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

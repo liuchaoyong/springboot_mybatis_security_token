@@ -1,7 +1,7 @@
-package com.example.auth.demo.config;
+package com.school.config;
 
-import com.example.auth.demo.domain.auth.UserDetail;
-import com.example.auth.demo.utils.JwtUtils;
+import com.school.domain.auth.UserDetail;
+import com.school.utils.JwtUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

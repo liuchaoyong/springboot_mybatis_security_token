@@ -1,12 +1,9 @@
-package com.example.auth.demo.controller;
+package com.school.controller;
 
-import com.example.auth.demo.domain.ResultCode;
-import com.example.auth.demo.domain.ResultJson;
-import com.example.auth.demo.domain.auth.Role;
-import com.example.auth.demo.domain.auth.User;
-import com.example.auth.demo.domain.auth.ResponseUserToken;
-import com.example.auth.demo.domain.auth.UserDetail;
-import com.example.auth.demo.service.AuthService;
+import com.school.domain.ResultCode;
+import com.school.domain.ResultJson;
+import com.school.domain.auth.*;
+import com.school.service.AuthService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -22,9 +19,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @RestController
-@Api(description = "登陆注册及刷新token")
+@Api(value = "登陆注册及刷新token")
 @RequestMapping("/api/v1")
 public class AuthController {
+
     @Value("${jwt.header}")
     private String tokenHeader;
 
@@ -60,7 +58,7 @@ public class AuthController {
     @RequestMapping(value = "/user",method = {RequestMethod.POST,RequestMethod.GET})
     @ApiOperation(value = "根据token获取用户信息", notes = "根据token获取用户信息")
     @ApiImplicitParams({@ApiImplicitParam(name = "Authorization", value = "Authorization token", required = true, dataType = "string", paramType = "header")})
-    public ResultJson getUser(HttpServletRequest request){
+    public ResultJson<UserDetail> getUser(HttpServletRequest request){
         String token = request.getHeader(tokenHeader);
         if (token == null) {
             return ResultJson.failure(ResultCode.UNAUTHORIZED);
@@ -69,15 +67,17 @@ public class AuthController {
         logger.info("userDetail:" + userDetail);
         return ResultJson.ok(userDetail);
     }
+
     @PostMapping(value = "/sign")
     @ApiOperation(value = "用户注册")
-    public ResultJson sign(@RequestBody User user) {
+    public ResultJson<UserDetail> sign(@RequestBody User user) {
         if (StringUtils.isAnyBlank(user.getName(), user.getPassword())) {
             return ResultJson.failure(ResultCode.BAD_REQUEST);
         }
         UserDetail userDetail = new UserDetail(user.getName(), user.getPassword(), Role.builder().id(1l).build());
         return ResultJson.ok(authService.register(userDetail));
     }
+
     @GetMapping(value = "refresh")
     @ApiOperation(value = "刷新token")
     public ResultJson refreshAndGetAuthenticationToken(
@@ -92,10 +92,8 @@ public class AuthController {
         }
     }
 
-
     @GetMapping(value = "/current")
-    public ResultJson current(){
-
-        return  ResultJson.ok("success");
+    public ResultJson<UserDetail> current(@CurrentUser UserDetail userDetail){
+        return  ResultJson.ok(userDetail);
     }
 }

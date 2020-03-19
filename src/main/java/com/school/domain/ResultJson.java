@@ -1,15 +1,24 @@
-package com.example.auth.demo.domain;
+package com.school.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
+@ApiModel("api接口通用返回对象")
 public class ResultJson<T> implements Serializable{
 
     private static final long serialVersionUID = 783015033603078674L;
+
+    @ApiModelProperty(value = "返回码")
     private int code;
+
+    @ApiModelProperty(value = "错误信息")
     private String msg;
+
+    @ApiModelProperty(value = "返回信息")
     private T data;
 
     public static ResultJson ok() {

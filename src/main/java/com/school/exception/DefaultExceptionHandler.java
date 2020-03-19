@@ -1,7 +1,7 @@
-package com.example.auth.demo.exception;
+package com.school.exception;
 
-import com.example.auth.demo.domain.ResultCode;
-import com.example.auth.demo.domain.ResultJson;
+import com.school.domain.ResultCode;
+import com.school.domain.ResultJson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

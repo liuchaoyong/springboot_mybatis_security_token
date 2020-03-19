@@ -1,4 +1,4 @@
-package com.example.auth.demo.domain;
+package com.school.domain;
 
 public enum ResultCode {
     /*

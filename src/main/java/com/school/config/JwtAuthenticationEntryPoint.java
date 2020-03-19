@@ -1,7 +1,7 @@
-package com.example.auth.demo.config;
+package com.school.config;
 
-import com.example.auth.demo.domain.ResultCode;
-import com.example.auth.demo.domain.ResultJson;
+import com.school.domain.ResultCode;
+import com.school.domain.ResultJson;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
